@@ -15,7 +15,11 @@ export default defineConfig({
     strictPort: true,
     allowedHosts: [
       'highway-changes-participated-coordinated.trycloudflare.com',
-      '.trycloudflare.com'  // This allows all trycloudflare subdomains
+      '.trycloudflare.com'
     ],
+  },
+  build: {
+    outDir: 'dist', // Explicitly set output directory
+    emptyOutDir: true, // Clean dist before building
   }
 })
