@@ -1,0 +1,48 @@
+[
+  {
+    "name": "categories",
+    "type": "base",
+    "fields": [
+      {
+        "name": "name",
+        "type": "text",
+        "required": true,
+        "options": {
+          "max": 255,
+          "min": 1,
+          "pattern": ""
+        }
+      },
+      {
+        "name": "slug",
+        "type": "text",
+        "required": true,
+        "unique": true,
+        "options": {
+          "max": 255,
+          "min": 1,
+          "pattern": "^[a-z0-9-]+$"
+        }
+      },
+      {
+        "name": "description",
+        "type": "text",
+        "required": false,
+        "options": {
+          "max": null,
+          "min": 0,
+          "pattern": ""
+        }
+      }
+    ],
+    "indexes": [
+      "CREATE UNIQUE INDEX idx_categories_slug ON categories (slug)"
+    ],
+    "listRule": null,
+    "viewRule": null,
+    "createRule": null,
+    "updateRule": null,
+    "deleteRule": null,
+    "system": false
+  }
+]
